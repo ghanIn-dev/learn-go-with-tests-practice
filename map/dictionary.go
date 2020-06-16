@@ -52,7 +52,12 @@ func (d Dictionary) Update(word, definition string) error {
 	case ErrNotFound:
 		return ErrWordDoesNotExist
 	default:
-		return nil
+		return err
 	}
 	return nil
+}
+
+//Delete is func
+func (d Dictionary) Delete(word string) {
+	delete(d, word)
 }
